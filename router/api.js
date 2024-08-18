@@ -382,7 +382,7 @@ router.get("/downloader/spotify", async (req, res) => {
   }
 });
 
-router.get("/downloader/youtube", async (req, res) => {
+router.get("/downloader/ytdl", async (req, res) => {
   const { url } = req.query;
   if (!url) return res.status(400).json(messages.url);
 
