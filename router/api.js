@@ -382,6 +382,36 @@ router.get("/downloader/spotify", async (req, res) => {
   }
 });
 
+router.get("/downloader/youtube", async (req, res) => {
+  const { url } = req.query;
+  if (!url) return res.status(400).json(messages.url);
+
+  try {
+    let yt = require("../scrapers/yutub")
+    let ytb = new yt()
+    const data = await ytb.download(url);
+    if (!data) return res.status(404).json(messages.notRes);
+    res.json({ status: true, developer: dev, result: data });
+  } catch (e) {
+    res.status(500).json(messages.error);
+  }
+});
+
+router.get("/internet/youtube", async (req, res) => {
+  const { query } = req.query;
+  if (!query) return res.status(400).json(messages.url);
+
+  try {
+    let yt = require("../scrapers/yutub")
+    let ytb = new yt()
+    const data = await ytb.search(query);
+    if (!data) return res.status(404).json(messages.notRes);
+    res.json({ status: true, developer: dev, result: data });
+  } catch (e) {
+    res.status(500).json(messages.error);
+  }
+});
+
 // Internet Routes
 router.get("/internet/kiryu", async (req, res) => {
   const { query } = req.query;
