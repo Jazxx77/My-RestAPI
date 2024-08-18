@@ -406,7 +406,7 @@ router.get("/internet/youtube", async (req, res) => {
     let ytb = new yt()
     const data = await ytb.search(query);
     if (!data) return res.status(404).json(messages.notRes);
-    res.json({ status: true, developer: dev, result: data });
+    res.json({ status: true, developer: dev, result: data.items });
   } catch (e) {
     res.status(500).json(messages.error);
   }
