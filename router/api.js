@@ -399,7 +399,7 @@ router.get("/downloader/youtube", async (req, res) => {
 
 router.get("/internet/youtube", async (req, res) => {
   const { query } = req.query;
-  if (!query) return res.status(400).json(messages.url);
+  if (!query) return res.status(400).json(messages.query);
 
   try {
     let yt = require("../scrapers/yutub")
