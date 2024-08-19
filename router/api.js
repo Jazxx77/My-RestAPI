@@ -382,7 +382,7 @@ router.get("/downloader/spotify", async (req, res) => {
   }
 });
 
-router.get("/downloader/ytdl", async (req, res) => {
+router.get("/downloader/youtube", async (req, res) => {
   const { url } = req.query;
   if (!url) return res.status(400).json(messages.url);
 
@@ -390,12 +390,13 @@ router.get("/downloader/ytdl", async (req, res) => {
     let yt = require("../scrapers/yutub")
     let ytb = new yt()
     const x = await ytb.download(url);
-    var data = {
+    var v = {
       title: x.title,
       thumb: x.thumbnail[1],
       audio: x.mp3,
       video: x.mp4
     }
+    var data = JSON.stringify(v)
     if (!data) return res.status(404).json(messages.notRes);
     res.json({ status: true, developer: dev, result: data });
   } catch (e) {
