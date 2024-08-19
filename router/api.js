@@ -72,6 +72,20 @@ const messages = {
 
 // AI Routes
 
+router.get("/ai/sweetai", async (req, res) => {
+  const { query } = req.query;
+  if (!query) return res.status(400).json(messages.query);
+  
+  try {
+    const data = await require("../scrapers/sweet")(query);
+    if (!data) return res.status(404).json(messages.notRes);
+    res.json({ status: true, developer: dev, result: data });
+  } catch (e) {
+    res.status(500).json(messages.error);
+  }
+});
+      
+
 router.post("/ai/luminai", async (req, res) => {
   const { query, username } = req.query;
   if (!query) return res.status(400).json(messages.query);
