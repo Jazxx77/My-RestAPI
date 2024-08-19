@@ -389,7 +389,13 @@ router.get("/downloader/ytdl", async (req, res) => {
   try {
     let yt = require("../scrapers/yutub")
     let ytb = new yt()
-    const data = await ytb.download(url);
+    const x = await ytb.download(url);
+    var data = {
+      title: x.title,
+      thumb: x.thumbnail[1],
+      audio: x.mp3,
+      video: x.mp4
+    }
     if (!data) return res.status(404).json(messages.notRes);
     res.json({ status: true, developer: dev, result: data });
   } catch (e) {
