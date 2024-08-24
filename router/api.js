@@ -585,6 +585,21 @@ router.get("/tools/ngl", async (req, res) => {
   }
 });
 
+router.get("/tools/enc", async (req, res) => {
+  const { query } = req.query;
+  if (!query) return res.status(400).json(messages.query);
+  
+  try {
+    let { obfuscate } = require("javascript-obfuscator");
+    let { getObfuscatedCode } = obfuscate(query);
+    const data = getObfuscatedCode()
+    if (!data) return res.status(404).json(messages.notRes);
+    res.json({ status: true, developer: dev, result: data });
+  } catch (e) {
+    res.status(500).json(messages.error);
+  }
+});
+
 // Others Routers
 router.get("/others/jagokata", async (req, res) => {
   const { query } = req.query;
