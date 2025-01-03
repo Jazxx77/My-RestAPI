@@ -8,7 +8,7 @@ const options = {
 };
 
 const host = {
-  BASE_URL: "https://jazxcode-restapi.vercel.app/", // Ganti dengan URL yang sesuai
+  BASE_URL: "https://jazxcode-restapi.vercel.app", // Ganti dengan URL yang sesuai
   // Contoh: https://domain.com
 };
 
