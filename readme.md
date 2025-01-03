@@ -30,7 +30,7 @@ To customize the API, modify the `schema/config.js` file. Below is an example co
 ```
 const options = {
   name: 'Api_Name',  // Customize your API name
-  developer: "@Irull2nd", // Replace with your own name or username
+  developer: "@Jazxx77", // Replace with your own name or username
   port: 3000, // Specify the port number
   webname: 'Your Name',  // Name of the website or project
   description: 'Simple Base Rest API', // Brief description of the API
@@ -52,6 +52,6 @@ module.exports = {
 This project is licensed under the [MIT License](LICENSE), which means you are free to use, modify, and distribute the code, but you must include the original copyright and license notice in any copy of the project or substantial portion of it.
 
 ## 👨‍💻 Original Work
-This project is an original creation by [@Irull2nd](https://www.github.com/khrlmstfa "@Irull2nd"). Any contributions or modifications should be properly attributed to the original author.
+This project is an original creation by [@Jazxx77](https://www.github.com/Jazxx77 "@Jazxx77"). Any contributions or modifications should be properly attributed to the original author.
 
 Feel free to contribute to this project by submitting issues or pull requests. Your feedback and contributions are always welcome!
