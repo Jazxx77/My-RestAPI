@@ -1,14 +1,14 @@
 const options = {
-  name: "ManaxuAPIs",
-  developer: "MannR.",
+  name: "MyRestApi",
+  developer: "JazxCode.",
   port: 3000,
-  webName: "ManaxuAPIs Playground",
+  webName: "JazxCode - MyRestApi",
   description: "Free Rest API",
-  favicon: "https://telegra.ph/file/4db35e1d30e8d503918d8.jpg",
+  favicon: "https://files.catbox.moe/o8jo86.jpg",
 };
 
 const host = {
-  BASE_URL: "https://api-manaxu.vercel.app", // Ganti dengan URL yang sesuai
+  BASE_URL: "https://jazxcode-restapi.vercel.app/", // Ganti dengan URL yang sesuai
   // Contoh: https://domain.com
 };
 
