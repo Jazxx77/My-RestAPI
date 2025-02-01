@@ -7,6 +7,7 @@ const skrep3 = require("../scrapers/downloader");
 const skrep4 = require("../scrapers/internet");
 const skrep5 = require("../scrapers/others");
 const skrep6 = require("../scrapers/tools");
+let scrapeJKT48Calendar = require("../scapers/jkt48Scraper");
 let apv = require("../scrapers/apv");
 const { developer: dev } = config.options;
 
