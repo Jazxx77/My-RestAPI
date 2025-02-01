@@ -558,6 +558,58 @@ const swaggerDocument = {
       },
     },
   },
+  "/api/jkt48/calendar": {
+    get: {
+      tags: ["JKT48"],
+      summary: "Cari acara di JKT48 Calendar",
+      parameters: [
+        {
+          in: "query",
+          name: "prompt",
+          schema: {
+            type: "string",
+          },
+          required: true,
+          description: inQuery,
+        },
+      ],
+      responses: {
+        200: {
+          description: "Result successfully returned",
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  status: {
+                    type: "boolean",
+                    example: true,
+                  },
+                  developer: {
+                    type: "string",
+                    example: config.options.developer,
+                  },
+                  result: {
+                    type: "array",
+                    items: {
+                      type: "object",
+                      properties: {
+                        date: { type: "string", example: "01 Februari 2025" },
+                        title: { type: "string", example: "JKT48 Theater Show" },
+                        time: { type: "string", example: "19:00" },
+                        description: { type: "string", example: "Pertunjukan spesial" },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
   "x-request-time": new Date().toISOString(),
 };
 
