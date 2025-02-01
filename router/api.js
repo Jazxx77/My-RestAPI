@@ -530,6 +530,18 @@ router.get("/internet/spotify", async (req, res) => {
     res.status(500).json(messages.error);
   }
 });
+router.get("/jkt48/calendar", async (req, res) => {
+  const { query } = req.query;
+  if (!query) return res.status(400).json(messages.query);
+
+  try {
+    const data = await scrapeJKT48Calendar(query);
+    if (!data) return res.status(404).json(messages.notRes);
+    res.json({ status: true, developer: dev, result: data });
+  } catch (e) {
+    res.status(500).json(messages.error);
+  }
+});
 
 // Tools Routes
 router.get("/tools/remini", async (req, res) => {
